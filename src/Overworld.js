@@ -21,7 +21,9 @@ class Overworld extends Phaser.Scene{
         const terrainLayer = map.createLayer('Terrain', tileset, 0, 0)
         const treeLayer = map.createLayer( "Trees", tileset, 0, 0).setDepth(10)
 
-        this.slime = this.physics.add.sprite( 32, 32, 'slime', 0)
+
+        const slimeSpawn = map.findObject('Spawns', obj => obj.name === 'slimeSpawn')
+        this.slime = this.physics.add.sprite( slimeSpawn.x, slimeSpawn.y, 'slime', 0)
         this.anims.create({
             key: 'jiggle',
             framerate: 8,
