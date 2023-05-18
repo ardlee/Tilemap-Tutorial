@@ -26,7 +26,7 @@ class Overworld extends Phaser.Scene{
         this.slime = this.physics.add.sprite( slimeSpawn.x, slimeSpawn.y, 'slime', 0)
         this.anims.create({
             key: 'jiggle',
-            framerate: 8,
+            frameRate: 8,
             repeat: -1,
             frames: this.anims.generateFrameNumbers('slime',{
                 start:0,
